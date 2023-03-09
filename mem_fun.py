@@ -12,6 +12,7 @@ def mem_UI():
 5. 도서 대여
 6. 도서 반납
 7. 회원 탈퇴
+8. 뒤로 가기
 0. 종료
 #########################
 입력> """)
@@ -29,7 +30,6 @@ def fun1(cur): # add_member
     except Exception as e:
         print("가입에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     else:
         print("##### 회원 가입 완료 #####")
@@ -45,7 +45,6 @@ def fun2(cur): # select all books
     except Exception as e:
         print("도서 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     print("##### 도서 조회 완료 #####")
     return True
@@ -60,8 +59,7 @@ def fun3(cur): # select books by name or author
             print(Book(*i))
     except Exception as e:
         print("도서 조회에 실패했습니다.")
-        print("#########################")
-        print(e)
+        print("#########################")   
         return False
     else:
         print("##### 도서 조회 완료 #####")
@@ -78,7 +76,6 @@ def fun4(cur): # select books by genre
     except Exception as e:
         print("도서 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     print("##### 도서 조회 완료 #####")
     return True
@@ -100,7 +97,6 @@ def fun5(cur): # borrow book
     except Exception as e:
         print("도서 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     else:
         print("#########################")
@@ -113,7 +109,6 @@ def fun5(cur): # borrow book
         except Exception as e:
             print("대여에 실패했습니다.")
             print("#########################")
-            print(e)
             return False
         else:
             print("##### 도서 대여 완료 #####")
@@ -133,7 +128,6 @@ def fun6(cur): # return book
     except Exception as e:
         print("도서 반납에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     else:
         print("#########################")
@@ -146,7 +140,6 @@ def fun6(cur): # return book
             except Exception as e:
                 print("반납에 실패했습니다.")
                 print("#########################")
-                print(e)
                 return False
             else:
                 print("##### 도서 반납 완료 #####")
@@ -165,11 +158,16 @@ def fun7(cur): # remove member
     except Exception as e:
         print("회원 탈퇴에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     else:
         print("##### 회원 탈퇴 완료 #####")
         return True
+
+def fun8(cur):
+    print("#########################")
+    print("뒤로 가기")
+    print("#########################")
+
 
 def quit(a): #quit
     print("#########################")
@@ -177,4 +175,4 @@ def quit(a): #quit
     print("#########################")
     exit()
 
-mem_menu = [quit, fun1, fun2, fun3, fun4, fun5, fun6, fun7]
+mem_menu = [quit, fun1, fun2, fun3, fun4, fun5, fun6, fun7, fun8]
