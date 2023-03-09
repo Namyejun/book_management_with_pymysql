@@ -11,6 +11,7 @@ def work_UI():
 4. 도서 전체 조회
 5. 도서 이름 및 저자로 조회
 6. 도서 장르로 조회
+7. 뒤로 가기
 0. 종료
 #########################
 입력> """)
@@ -24,8 +25,7 @@ def fun1(cur): # add_book
         cur.execute(f"insert into `books`(`ISBN`, `name`, `author`, `genre`, `price`) values ('{s[0]}', '{s[1]}', '{s[2]}', '{s[3]}', {int(s[4])});")
     except Exception as e:
         print("입력에 실패했습니다.")
-        print("#########################")
-        print(e)
+        print("#########################")   
         return False
     print("##### 도서 추가 완료 #####")
     return True
@@ -40,7 +40,6 @@ def fun2(cur): # select all borrow list
     except Exception as e:
         print("목록 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     print("##### 목록 조회 완료 #####")
     return True
@@ -55,7 +54,6 @@ def fun3(cur): # select return date over
     except Exception as e:
         print("목록 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     print("##### 목록 조회 완료 #####")
     return True
@@ -70,7 +68,6 @@ def fun4(cur): # select all books
     except Exception as e:
         print("도서 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     print("##### 도서 조회 완료 #####")
     return True
@@ -86,7 +83,6 @@ def fun5(cur): # select books by name or author
     except Exception as e:
         print("도서 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     else:
         print("##### 도서 조회 완료 #####")
@@ -103,10 +99,15 @@ def fun6(cur): # select books by genre
     except Exception as e:
         print("도서 조회에 실패했습니다.")
         print("#########################")
-        print(e)
         return False
     print("##### 도서 조회 완료 #####")
     return True
+
+def fun7(cur):
+    print("#########################")
+    print("뒤로 가기")
+    print("#########################")
+
 def quit(a): #quit
     print("#########################")
     print("프로그램을 종료합니다.")
