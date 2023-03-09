@@ -23,6 +23,7 @@ with con_db() as conn:
                         continue
                     else:
                         mem_fun.mem_menu[choice](cur)
+                        if choice == 8: break
                         conn.commit()
             elif c == '2':
                 while True:
@@ -33,4 +34,6 @@ with con_db() as conn:
                         continue
                     else:
                         work_fun.work_menu[choice](cur)
+                        if choice == 7: break
+                        conn.commit()
 
