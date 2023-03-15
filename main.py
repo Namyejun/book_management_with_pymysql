@@ -11,7 +11,7 @@ def UI():
 #########################
 입력> """)
 print()
-with con_db_for_other() as conn:
+with con_db() as conn:
     with conn.cursor() as cur:
         while True:
             c = UI()
@@ -19,22 +19,23 @@ with con_db_for_other() as conn:
                 while True:
                     try:
                         choice = int(mem_fun.mem_UI())
+                        mem_fun.mem_menu[choice](cur)
                     except Exception as e:
                         print("다시 선택하세요.")
                         continue
                     else:
-                        mem_fun.mem_menu[choice](cur)
                         if choice == 8: break
                         conn.commit()
+
             elif c == '2':
                 while True:
                     try:
                         choice = int(work_fun.work_UI())
+                        work_fun.work_menu[choice](cur)
                     except Exception as e:
                         print("다시 선택하세요.")
                         continue
                     else:
-                        work_fun.work_menu[choice](cur)
                         if choice == 7: break
                         conn.commit()
 
