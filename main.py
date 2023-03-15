@@ -1,4 +1,5 @@
 from conn import con_db
+from conn_for_other import con_db_for_other
 import work_fun
 import mem_fun
 
@@ -10,7 +11,7 @@ def UI():
 #########################
 입력> """)
 print()
-with con_db() as conn:
+with con_db_for_other() as conn:
     with conn.cursor() as cur:
         while True:
             c = UI()
