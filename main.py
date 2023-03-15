@@ -11,7 +11,7 @@ def UI():
 #########################
 입력> """)
 print()
-with con_db() as conn:
+with con_db_for_other() as conn:
     with conn.cursor() as cur:
         while True:
             c = UI()
