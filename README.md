@@ -8,4 +8,5 @@
 3. work_fun -> 직원이 실행할 수 있는 기능을 모아놓은 파일<br>
 4. main.py -> 프로그램이 실제 돌아가는 장소<br>
 5. conn_for_other -> DB와 세션을 만들어주는 파일 <br>
-6. schema.sql -> DB 설계하는 DDL문 및 ~<br>
+6. Management_program.exe -> 프로그램 실행파일
+   1. 실행이 안될 시 /dist/main/main.exe 실행
